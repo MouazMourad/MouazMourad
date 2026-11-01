@@ -1,0 +1,27 @@
+{
+  "name": "التقييم التطويري للبنية التحتية المصرفية",
+  "short_name": "تقييم البنية",
+  "description": "تقييم فني تطويري للبنية التحتية المصرفية مع حفظ الملاحظات محلياً وإعداد التقرير النهائي.",
+  "id": "./",
+  "start_url": "./?source=homescreen",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f8f8",
+  "theme_color": "#102f3d",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
