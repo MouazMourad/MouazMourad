@@ -1,0 +1,36 @@
+name: Publish SCB Assessment PWA
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scb-assessment/**'
+      - '.github/workflows/deploy-scb-assessment.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "scb-assessment-pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364 # v4.2.2
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload app files
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: scb-assessment
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
